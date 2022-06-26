@@ -37,6 +37,9 @@ app.get("/", (req, res) => {
 
 require("./app/routes/turorial.routes")(app);
 require("./app/routes/trajet.routes")(app);
+require("./app/routes/patient.routes")(app);
+require("./app/routes/operateur.routes")(app);
+require("./app/routes/itineraire.routes")(app);
 
 
 // set port, listen for requests
