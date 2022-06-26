@@ -3,13 +3,13 @@ module.exports = app => {
     var trajetRouter = require("express").Router();
     // Create a new Tutorial
     trajetRouter.post("/", trajet.createTrajet);
-    trajetRouter.get("/", trajet.getTrajetByOperateur);
-    trajetRouter.get("/", trajet.getTrajetByPatient);
-    trajetRouter.get("/", trajet.getTrajetDouteux);
-    trajetRouter.get("/", trajet.getTrajetValide);
-    trajetRouter.post("/", trajet.updateTrajetByID);
-    trajetRouter.get("/", trajet.getAllTrajets);
-    trajetRouter.get("/", trajet.findTrajetByID);
+    trajetRouter.get("/getTrajetByOperateur/:id", trajet.getTrajetByOperateur);
+    trajetRouter.get("/getTrajetByPatient/:id", trajet.getTrajetByPatient);
+    trajetRouter.get("/getTrajetDouteux/", trajet.getTrajetDouteux);
+    trajetRouter.get("/getTrajetValide/", trajet.getTrajetValide);
+    trajetRouter.post("/updateTrajetByID/", trajet.updateTrajetByID);
+    trajetRouter.get("/getAllTrajets/", trajet.getAllTrajets);
+    trajetRouter.get("/:id", trajet.findTrajetByID);
 
     app.use('/api/trajet', trajetRouter);
     

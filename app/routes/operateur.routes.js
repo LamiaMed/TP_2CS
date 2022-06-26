@@ -3,11 +3,13 @@ module.exports = app => {
   
     var routerOperateur = require("express").Router();
   
+    routerOperateur.post("/createOperateur/", operateur.createOperateur);
+
     // récupérer un opérateur par son ID
-    routerOperateur.get("/", operateur.findOperateurByID);
+    routerOperateur.get("/findOperateurByID/:id", operateur.findOperateurByID);
   
     //récupérer la liste de tous les opérateurs
-    routerOperateur.get("/", operateur.getAllOperateurs);
+    routerOperateur.get("/getAllOperateurs/", operateur.getAllOperateurs);
 
     app.use('/api/operateur', routerOperateur);
   };

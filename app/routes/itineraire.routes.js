@@ -7,10 +7,10 @@ module.exports = app => {
     routerItineraire.post("/", itineraire.createItineraire);
   
     //mettre à jour un itinéraire
-    routerItineraire.post("/", itineraire.updateItineraireByID);
+    routerItineraire.post("/updateItineraireByID/:id", itineraire.updateItineraireByID);
 
     //récupérer un itineraire par son id
-    routerItineraire.get("/", itineraire.getItineraireByID);
+    routerItineraire.get("/getItineraireByID/:id", itineraire.getItineraireByID);
 
     app.use('/api/itineraire', routerItineraire);
   };
