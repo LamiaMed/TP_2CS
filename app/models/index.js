@@ -31,5 +31,12 @@ db.sequelize = sequelize;
 
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.assure = require("./assure.model.js")(sequelize, Sequelize);
+db.operateur = require("./operateur.model.js")(sequelize, Sequelize);
+db.patient = require("./patient.model.js")(sequelize, Sequelize);
+db.trajet = require("./trajet.model.js")(sequelize, Sequelize);
+db.itineraire = require("./itineraire.model.js")(sequelize, Sequelize);
+db.vehicule = require("./vehicule.model.js")(sequelize, Sequelize);
+db.chauffeur = require("./chauffeur.model.js")(sequelize, Sequelize);
+
 
 module.exports = db;
