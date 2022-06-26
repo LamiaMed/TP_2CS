@@ -11,6 +11,6 @@ module.exports = app => {
     trajetRouter.get("/", trajet.getAllTrajets);
     trajetRouter.get("/", trajet.findTrajetByID);
 
-    app.use('/api/trajet', router);
+    app.use('/api/trajet', trajetRouter);
     
   };

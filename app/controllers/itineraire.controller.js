@@ -39,6 +39,23 @@ exports.createItineraire = async(req, res) =>{
 
 };
 
+exports.getItineraireByID = async(req, res) =>{
+  try{
+      const itineraire = await Itineraire.findOne({
+          where:{
+              idItineraire: +req.params.id,
+          },
+      });
+      res.status(200).send(itineraire);
+  } catch(err){
+      res.status(500).send({
+          error: err.message || 
+          'Some error occured while retrieving the itinerary' + 
+          req.params.id,
+      });
+  }
+};
+
 exports.updateItineraireByID = (req, res) => {
     const id = req.params.id;
   

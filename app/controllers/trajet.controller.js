@@ -154,7 +154,7 @@ exports.updateTrajetByID = (req, res) => {
       });
   };
 
-const findTrajetByID = async(req, res) =>{
+exports.findTrajetByID = async(req, res) =>{
     try{
         const trajet = await Trajet.findAll({
             where:{
@@ -169,15 +169,4 @@ const findTrajetByID = async(req, res) =>{
             req.params.id,
         });
     }
-};
-
-export default{
-    createTrajet,
-    getTrajetByOperateur,
-    getTrajetByPatient,
-    getTrajetDouteux,
-    getTrajetValide,
-    updateTrajetByID,
-    getAllTrajets,
-    findTrajetByID
 };

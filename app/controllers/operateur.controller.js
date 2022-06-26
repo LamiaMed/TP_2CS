@@ -1,7 +1,7 @@
 const db = require("../models");
 const Operateur = db.operateur;
 
-const findOperateurByID = async(req, res) =>{
+exports.findOperateurByID = async(req, res) =>{
     try{
         const operateur = await Operateur.findOne({
             where:{
