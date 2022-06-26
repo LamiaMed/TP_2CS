@@ -26,7 +26,7 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.FLOAT,
         },
 
-        latDomicilePAtient:{
+        latDomicilePatient:{
             type: Sequelize.FLOAT,
         },
 

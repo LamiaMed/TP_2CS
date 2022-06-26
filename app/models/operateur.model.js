@@ -13,8 +13,17 @@ module.exports = function (sequelize, Sequelize) {
 				type: Sequelize.STRING,
 			},
 
-            adresse_siege:{
+            adresseSiege:{
                 type: Sequelize.STRING,
+            },
+
+            longSiege:{
+                type: Sequelize.FLOAT,
+				allowNull: false,
+            },
+
+            latSiege:{
+                type: Sequelize.FLOAT,
 				allowNull: false,
             },
 

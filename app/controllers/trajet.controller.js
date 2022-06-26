@@ -53,7 +53,7 @@ exports.createTrajet = async(req, res) =>{
 
 exports.getTrajetByOperateur = async(req, res) => {
     try {
-        const trajet = await Trajet.findOne({
+        const trajet = await Trajet.findAll({
             where: {
                 idOperateur: req.params.id,
             },
@@ -175,4 +175,3 @@ exports.findTrajetByID = async(req, res) =>{
         });
     }
 };
-

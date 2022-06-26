@@ -24,8 +24,13 @@ module.exports = function (sequelize, Sequelize) {
             date_de_naissance: {
                 type : Sequelize.DATE,
             },
-            adresse:{
-                type: Sequelize.STRING,
+            latDomicile:{
+                type: Sequelize.FLOAT,
+				allowNull: false,
+            },
+			longDomicile:{
+                type: Sequelize.FLOAT,
+				allowNull: false,
             }
 		},
 		{
