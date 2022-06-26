@@ -19,6 +19,8 @@ exports.createTrajet = async(req, res) =>{
 
         dateDebut: req.body.dateDebut,
         heureDebut: req.body.heureDebut,
+        idItineraireEmprunte: req.body.idItineraireEmprunte,
+        idItinerairePrevu: req.body.idITinerairePrevu,
         tempsAttente: req.body.tempsAttente,
         nbAvertissement: req.body.nbAvertissement,
         nbSignalement: req.body.nbSignalement,
@@ -43,7 +45,6 @@ exports.createTrajet = async(req, res) =>{
             error: err.message || "Some error occurred while creating the Trajet."
         });
     }
-
 
 };
 

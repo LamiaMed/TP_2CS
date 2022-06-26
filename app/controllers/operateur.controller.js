@@ -18,7 +18,6 @@ const findOperateurByID = async(req, res) =>{
     }
 };
 
-// Retrieve all Tutorials from the database.
 exports.getAllOperateurs = (req, res) => {
     var condition = 1 === 1;
   
