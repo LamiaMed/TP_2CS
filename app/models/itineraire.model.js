@@ -12,8 +12,32 @@ module.exports = function(sequelize, Sequelize) {
 
         tempsEstime: {
             type: Sequelize.INTEGER,
-
         },
+
+        longSiege:{
+            type: Sequelize.FLOAT,
+        },
+
+        latSiege : {
+            type: Sequelize.FLOAT,
+        },
+
+        longDomicilePatient:{
+            type: Sequelize.FLOAT,
+        },
+
+        latDomicilePAtient:{
+            type: Sequelize.FLOAT,
+        },
+
+        longStruct:{
+            type: Sequelize.FLOAT,
+        },
+
+        latStruct:{
+            type: Sequelize.FLOAT,
+        },
+
         nbKilometres: {
             type: Sequelize.FLOAT,
         },

@@ -7,11 +7,19 @@ module.exports = function(sequelize, Sequelize) {
             autoIncrement:true,
         },
 
+        idItineraireEmprunte:{
+            type: Sequelize.INTEGER,
+        },
+
+        idItinerairePrevu:{
+            type: Sequelize.INTEGER,
+        },
+
         dateDebut: {
             type: Sequelize.DATE,
         },
         heureDebut: {
-            type: Sequelize.DATE,
+            type: Sequelize.TIME,
         },
         tempsAttente: {
             type: Sequelize.INTEGER,
@@ -67,7 +75,12 @@ module.exports = function(sequelize, Sequelize) {
     Trajet.associate = models => {
         Trajet.hasOne(models.operateur, {
             foreignKey: 'idOperateur',
-
+        });
+        Trajet.hasOne(models.itineraire, {
+            foreignKey: 'idItineraireEmprunte',
+        });
+        Trajet.hasOne(models.itineraire, {
+            foreignKey: 'idItinerairePrevu',
         });
         Trajet.hasOne(models.patient, {
             foreignKey: 'idPatient',
@@ -79,5 +92,6 @@ module.exports = function(sequelize, Sequelize) {
             foreignKey: 'idChauffeur',
         });
     };
+    
     return Trajet;
 };
