@@ -7,7 +7,10 @@ const Patient = db.patient;
 var sequelize = require("sequelize");
 
 exports.createTrajet = async(req, res) =>{
-    
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    console.log(req.body.dateDebut)
+    console.log(req.body.heureDebut)
+    console.log(req.body.tempsAttente)
     if (!req.body.dateDebut || !req.body.heureDebut || !req.body.tempsAttente) {
         res.status(400).send({
           message: "Content can not be empty!"
@@ -55,7 +58,9 @@ exports.getTrajetByOperateur = async(req, res) => {
                 idOperateur: req.params.id,
             },
         });
+        console.log(trajet)
         res.status(200).send(trajet);
+        
     } catch (err) {
         res.status(500).send({
             error: err.message ||
@@ -139,7 +144,7 @@ exports.updateTrajetByID = (req, res) => {
       });
   };
 
-  exports.getAllTrajets = (req, res) => {
+exports.getAllTrajets = (req, res) => {
     var condition = 1 === 1
   
     Trajet.findAll({ where: condition })
@@ -154,7 +159,7 @@ exports.updateTrajetByID = (req, res) => {
       });
   };
 
-const findTrajetByID = async(req, res) =>{
+exports.findTrajetByID = async(req, res) =>{
     try{
         const trajet = await Trajet.findAll({
             where:{
@@ -171,13 +176,3 @@ const findTrajetByID = async(req, res) =>{
     }
 };
 
-export default{
-    createTrajet,
-    getTrajetByOperateur,
-    getTrajetByPatient,
-    getTrajetDouteux,
-    getTrajetValide,
-    updateTrajetByID,
-    getAllTrajets,
-    findTrajetByID
-};
