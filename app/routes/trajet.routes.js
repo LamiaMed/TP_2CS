@@ -7,7 +7,7 @@ module.exports = app => {
     trajetRouter.get("/getTrajetByPatient/:id", trajet.getTrajetByPatient);
     trajetRouter.get("/getTrajetDouteux/", trajet.getTrajetDouteux);
     trajetRouter.get("/getTrajetValide/", trajet.getTrajetValide);
-    trajetRouter.post("/updateTrajetByID/", trajet.updateTrajetByID);
+    trajetRouter.post("/updateTrajetByID/:id", trajet.updateTrajetByID);
     trajetRouter.get("/getAllTrajets/", trajet.getAllTrajets);
     trajetRouter.get("/:id", trajet.findTrajetByID);
 

@@ -91,7 +91,7 @@ exports.getTrajetDouteux = (req, res) => {
     const title = req.query.title;
     var condition = {trajetDouteux: true};
   
-    Tutorial.findAll({ where: condition })
+    Trajet.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
@@ -122,7 +122,6 @@ exports.getTrajetDouteux = (req, res) => {
 
 exports.updateTrajetByID = (req, res) => {
     const id = req.params.id;
-  
     Trajet.update(req.body, {
       where: { idTrajet: id }
     })
