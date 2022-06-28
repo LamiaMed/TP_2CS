@@ -37,6 +37,8 @@ db.trajet = require("./trajet.model.js")(sequelize, Sequelize);
 db.itineraire = require("./itineraire.model.js")(sequelize, Sequelize);
 db.vehicule = require("./vehicule.model.js")(sequelize, Sequelize);
 db.chauffeur = require("./chauffeur.model.js")(sequelize, Sequelize);
+db.changeitineraire = require("./changeitineraire.model.js")(sequelize, Sequelize);
+
 
 
 module.exports = db;

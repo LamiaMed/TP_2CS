@@ -48,6 +48,62 @@ exports.createTrajet = async(req, res) =>{
 
 };
 
+exports.setTrajetDouteux = async(req, res) => {
+  const id = req.params.id;
+  req.body = {
+      trajetDouteux: true
+  }
+
+  Trajet.update(req.body, {
+          where: { idTrajet: id }
+      })
+      .then(num => {
+          if (num == 1) {
+              res.status(200).send({
+                  message: "Trajet est maintenant considéré comme douteux."
+              });
+          } else {
+              res.send({
+                  message: `Cannot render trajet douteux with idTrajet=${id}. Maybe Trajet was not found!`
+              });
+          }
+      })
+      .catch(err => {
+          res.status(500).send({
+              message: "Error rendering trajet douteux with idTrajet=" + id
+          });
+      });
+};
+
+exports.setTrajetValide = async(req, res) => {
+  const id = req.params.id;
+
+  req.body = {
+      trajetDouteux: false,
+      trajetValide: true
+  }
+
+  Trajet.update(req.body, {
+          where: { idTrajet: id }
+      })
+      .then(num => {
+          if (num == 1) {
+              res.status(200).send({
+                  message: "Trajet est maintenant considéré comme valide."
+              });
+          } else {
+              res.send({
+                  message: `Cannot validate trajet with idTrajet=${id}. Maybe Trajet was not found!`
+              });
+          }
+      })
+      .catch(err => {
+          res.status(500).send({
+              message: "Error validating trajet with idTrajet=" + id
+          });
+      });
+};
+
 exports.getTrajetByOperateur = async(req, res) => {
     try {
         const trajet = await Trajet.findAll({
