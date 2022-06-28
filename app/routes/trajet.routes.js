@@ -22,10 +22,8 @@ module.exports = app => {
     //Récupérer tous les trajets valides (dont le champs trajetValide est à TRUE)
     trajetRouter.get("/getTrajetValide/", trajet.getTrajetValide);
 
-    //Mettre à jour un trajet par son ID
-    trajetRouter.post("/updateTrajetByID/", trajet.updateTrajetByID);
-
-    //Récupérer la liste de tous les trajets
+    trajetRouter.post("/updateTrajetByID/:id", trajet.updateTrajetByID);
+    
     trajetRouter.get("/getAllTrajets/", trajet.getAllTrajets);
 
     //Récupérer un trajet par son ID

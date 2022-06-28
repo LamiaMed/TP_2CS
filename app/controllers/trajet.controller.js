@@ -51,7 +51,8 @@ exports.createTrajet = async(req, res) =>{
 exports.setTrajetDouteux = async(req, res) => {
   const id = req.params.id;
   req.body = {
-      trajetDouteux: true
+      trajetDouteux: true,
+      trajetValide: false
   }
 
   Trajet.update(req.body, {
@@ -142,7 +143,7 @@ exports.getTrajetDouteux = (req, res) => {
     const title = req.query.title;
     var condition = {trajetDouteux: true};
   
-    Tutorial.findAll({ where: condition })
+    Trajet.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
@@ -158,7 +159,7 @@ exports.getTrajetDouteux = (req, res) => {
     const title = req.query.title;
     var condition = {trajetValide: true};
   
-    Tutorial.findAll({ where: condition })
+    Trajet.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
