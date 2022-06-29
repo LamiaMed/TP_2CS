@@ -18,9 +18,11 @@ module.exports = function(sequelize, Sequelize) {
         dateDebut: {
             type: Sequelize.DATE,
         },
+
         heureDebut: {
             type: Sequelize.TIME,
         },
+        
         tempsAttente: {
             type: Sequelize.INTEGER,
 
@@ -63,9 +65,6 @@ module.exports = function(sequelize, Sequelize) {
         idVehicule: {
             type: Sequelize.INTEGER,
         },
-        idChangementItineraire: {
-            type: Sequelize.INTEGER,
-        }
 
     }, {
         freezeTableName: true,
@@ -93,9 +92,6 @@ module.exports = function(sequelize, Sequelize) {
         });
         Trajet.hasOne(models.chauffeur, {
             foreignKey: 'idChauffeur',
-        });
-        Trajet.hasOne(models.changeitineraire, {
-            foreignKey: 'idChangementItineraire',
         });
     };
     
