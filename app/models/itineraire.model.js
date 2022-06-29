@@ -44,6 +44,10 @@ module.exports = function(sequelize, Sequelize) {
 
         idTrajet: {
             type: Sequelize.INTEGER,
+        },
+
+        idStructure:{
+            type: Sequelize.INTEGER,
         }
     }, {
         freezeTableName: true,
@@ -56,6 +60,10 @@ module.exports = function(sequelize, Sequelize) {
     Itineraire.associate = models => {
         Trajet.belongsTo(models.trajet, {
             foreignKey: 'idTrajet',
+        });
+
+        Structure.belongsTo(models.structure, {
+            foreignKey: 'idStructure',
 
         });
     };

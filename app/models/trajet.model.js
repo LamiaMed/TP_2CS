@@ -22,7 +22,7 @@ module.exports = function(sequelize, Sequelize) {
         heureDebut: {
             type: Sequelize.TIME,
         },
-        
+
         tempsAttente: {
             type: Sequelize.INTEGER,
 
@@ -66,6 +66,10 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER,
         },
 
+        idStructure: {
+            type: Sequelize.INTEGER,
+        },
+
     }, {
         freezeTableName: true,
         tableName: 'trajet',
@@ -92,6 +96,9 @@ module.exports = function(sequelize, Sequelize) {
         });
         Trajet.hasOne(models.chauffeur, {
             foreignKey: 'idChauffeur',
+        });
+        Trajet.hasOne(models.structure, {
+            foreignKey: 'idStructure',
         });
     };
     

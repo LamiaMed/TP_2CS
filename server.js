@@ -40,6 +40,10 @@ require("./app/routes/trajet.routes")(app);
 require("./app/routes/patient.routes")(app);
 require("./app/routes/operateur.routes")(app);
 require("./app/routes/itineraire.routes")(app);
+require("./app/routes/changeitineraire.routes")(app);
+require("./app/routes/structure.routes")(app);
+
+
 
 
 // set port, listen for requests
