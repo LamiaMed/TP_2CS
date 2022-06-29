@@ -42,6 +42,7 @@ require("./app/routes/operateur.routes")(app);
 require("./app/routes/itineraire.routes")(app);
 require("./app/routes/changeitineraire.routes")(app);
 require("./app/routes/structure.routes")(app);
+require("./app/routes/chauffeur.routes")(app);
 
 
 
