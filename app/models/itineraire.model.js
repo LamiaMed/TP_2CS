@@ -46,9 +46,6 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.INTEGER,
         },
 
-        idStructure:{
-            type: Sequelize.INTEGER,
-        }
     }, {
         freezeTableName: true,
         tableName: 'itineraire',
@@ -62,10 +59,7 @@ module.exports = function(sequelize, Sequelize) {
             foreignKey: 'idTrajet',
         });
 
-        Structure.belongsTo(models.structure, {
-            foreignKey: 'idStructure',
-
-        });
+        
     };
     return Itineraire;
 };
