@@ -39,6 +39,10 @@ db.vehicule = require("./vehicule.model.js")(sequelize, Sequelize);
 db.chauffeur = require("./chauffeur.model.js")(sequelize, Sequelize);
 db.changeitineraire = require("./changeitineraire.model.js")(sequelize, Sequelize);
 db.structure = require("./structure.model.js")(sequelize, Sequelize);
+db.demandepc = require("./demandepc.model.js")(sequelize, Sequelize);
+db.reclamation = require("./reclamation.model.js")(sequelize, Sequelize);
+db.evaluation = require("./evaluation.model.js")(sequelize, Sequelize);
+db.controle = require("./controle.model.js")(sequelize, Sequelize);
 
 
 

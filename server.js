@@ -43,6 +43,13 @@ require("./app/routes/itineraire.routes")(app);
 require("./app/routes/changeitineraire.routes")(app);
 require("./app/routes/structure.routes")(app);
 require("./app/routes/chauffeur.routes")(app);
+require("./app/routes/demandepc.routes")(app);
+//require("./app/routes/evaluation.routes")(app);
+//require("./app/routes/reclamation.routes")(app);
+//require("./app/routes/controle.routes")(app);
+
+
+
 
 
 
