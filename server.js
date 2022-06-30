@@ -16,6 +16,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
+const { Pool } = require("pg");
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:openpgpwd@localhost:5432/EQ10A',
+  ssl: process.env.DATABASE_URL? true : false
+})
 
 db.sequelize.sync()
   .then(() => {
@@ -53,9 +59,10 @@ require("./app/routes/demandepc.routes")(app);
 
 
 
-
 // set port, listen for requests
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+
