@@ -19,7 +19,7 @@ const db = require("./app/models");
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:openpgpwd@localhost:5432/EQ10A',
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:root1234@localhost:5432/EQ10A:openpgpwd',
   ssl: process.env.DATABASE_URL? true : false
 })
 
