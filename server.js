@@ -18,10 +18,26 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./app/models");
 const { Pool } = require("pg");
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:root1234@localhost:5432/EQ10A:openpgpwd',
+/* const pool = new Pool({
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost:5432/EQ10A:openpgpwd',
   ssl: process.env.DATABASE_URL? true : false
-})
+}) */
+
+const pool = (() => {
+  if (process.env.NODE_ENV !== 'production') {
+      return new Pool({
+          connectionString: process.env.DATABASE_URL,
+          ssl: false
+      });
+  } else {
+      return new Pool({
+          connectionString: process.env.DATABASE_URL,
+          ssl: {
+              rejectUnauthorized: false
+            }
+      });
+  } })();
+  
 
 db.sequelize.sync()
   .then(() => {
